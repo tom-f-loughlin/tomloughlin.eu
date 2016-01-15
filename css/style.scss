@@ -1,0 +1,183 @@
+  /* Variables */
+
+$font-stack:    'Istok Web', sans-serif;
+$primary-color: #333;
+$hundred-perc: 100%;
+$head-nav-h: 80px;
+$head-main-colour: #3b3a36;
+$head-hover-colour: #e6af4b;
+$head-font-colour: #e9ece5;
+$back-colour: #e3e3e3;
+$dark-colour: #3b3a36;
+$mint-colour: #c0dfd9;
+/* same as above*/
+$freshgray-colour: #e9ece5;
+$cargreen-colour: #b3c2bf;
+$lightblue-colour: #9ad3de;
+$blue-colour: #89bdd3;
+
+/* Extendables */
+.resetPadMarg {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.listObjHover {
+  li:active, li:hover {
+      background-color: $head-hover-colour;
+      cursor: pointer;
+  }  
+}
+
+
+  /*______GLOBAL STYLE______ */
+
+body,html{
+  height : $hundred-perc;            /* Internet Explorer treats as min-height. */
+  min-height : $hundred-perc;    
+}
+
+body{
+  font-family: $font-stack;
+  font-size:12px;
+  position:relative;
+  color: $dark-colour;
+  background-color: $back-colour;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+.back {
+  height: $hundred-perc;
+  color: $dark-colour;
+  background-color: $back-colour;
+  @extend .resetPadMarg;
+}
+header{
+  @extend .resetPadMarg;
+  background-color: $back-colour;
+}
+
+.main-content, .side-content{
+  height: calc(100% - 80px); /* doesn't work with variables in compiler. */
+}
+.side-content{
+  background:url('../images/001tlochers.jpg') no-repeat center right fixed;
+  background-color: #b3c2bf;
+}
+.navigation-bar{
+  height: $head-nav-h;
+  background-color: $back-colour;
+
+  ul{
+    list-style: none; 
+    height: $head-nav-h;
+    padding: 0;
+    margin: 0;
+    @extend .listObjHover;
+
+    .active, li{
+      color: $head-font-colour;
+      font-size: 2em;
+      background-color: $head-main-colour;
+      text-align: center;
+
+      /* as it's an anchor tag need to ensure it micmic's parents hieght and states */
+    }
+
+    .active {
+      font-size: 4em;
+      max-height: $hundred-perc;
+    }
+
+  }
+
+}
+/*p{
+  padding:10px;
+  width:600px;
+  font-size:18px;
+  margin-right:auto;
+  margin-left:auto;
+}
+p:first{
+  padding-top:20px;
+}
+h1,h2,small{
+  font-style:italic;
+}
+h1{
+  font-size:40px;
+  padding:10px;
+}
+h2{
+  font-size:30px;
+    padding:10px;
+}
+
+.navigation-bar {
+  height: 16%;
+  background-color: #3b3a36;
+}
+.navigation-bar nav {
+  height: 100%;
+}
+.navigation-bar ul{
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  position: relative;
+}
+.navigation-bar li{
+  color: #e9ece5;
+  width: 25%;
+  display: inline-block;
+  float: left;
+  position: relative;
+  height: 100%;
+}
+.navigation-bar li:hover{
+  background-color: #e6af4b;
+}
+.navigation-bar a {
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  margin: auto 0;
+}
+.main-content {
+  width: 70%;
+  position: fixed;
+  background-color: #c9c9c9;
+  min-width: 400px;
+  height: 84%;
+  max-height: 84%;
+  right: 0;
+  bottom: 0;
+}
+.main-content div{
+  top: 20%;
+  text-align: center;
+  position: absolute;
+  margin: auto 0;
+}
+.side-content {
+  width: 30%;
+  min-width: 160px;
+  position: fixed;
+  height: 84%;
+  max-height: 84%;
+  background-color: #e3e3e3;
+  background: url("../images/001tlochers.jpg");
+  left: 0;
+  bottom: 0;
+}
+.dark-font {
+  color: #3b3a36;
+}*/
+/* b3c2bf , e9ece5, c0dfd9
+ #c9c9c9 darker
+#e3e3e3 light
+#9ad3de light
+#89bdd3 blue */
