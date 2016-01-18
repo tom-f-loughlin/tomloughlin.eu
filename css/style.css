@@ -38,6 +38,24 @@ header {
   height: calc(100% - 80px);
   /* doesn't work with variables in compiler. */ }
 
+.main-content {
+  display: flex;
+  /*flex-flow:column nowrap;*/
+  flex-direction: column; }
+
+.main-wrap {
+  /*height: 50%;*/
+  margin: auto;
+  align-self: center;
+  /*text-align: left;*/ }
+
+.btn-bar {
+  align-self: flex-start;
+  margin: 0 auto; }
+  .btn-bar #buttons #prev, .btn-bar #buttons #next {
+    margin: auto 20px;
+    font-size: 4vh; }
+
 .side-content {
   background: url("../images/001tlochers.jpg") no-repeat center right fixed;
   background-color: #b3c2bf; }
