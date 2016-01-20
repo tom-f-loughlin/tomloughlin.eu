@@ -1,6 +1,7 @@
   /* Variables */
 
-$font-stack:    'Istok Web', sans-serif;
+$font-head: 'Playfair Display', serif;
+$font-stack: 'Crimson Text', serif;
 $primary-color: #333;
 $hundred-perc: 100%;
 $head-nav-h: 80px;
@@ -23,8 +24,12 @@ $blue-colour: #89bdd3;
 }
 .listObjHover {
   li:active, li:hover {
-      background-color: $head-hover-colour;
+      background-color: #FFF4CA;
       cursor: pointer;
+      a {
+        /*color: #3872DD;*/
+        color: #f2b632;
+      }
   }  
 }
 
@@ -41,30 +46,43 @@ body{
   font-size:12px;
   position:relative;
   color: $dark-colour;
-  background-color: $back-colour;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   }
 .back {
   height: $hundred-perc;
   color: $dark-colour;
-  background-color: $back-colour;
   @extend .resetPadMarg;
 }
 header{
   @extend .resetPadMarg;
   background-color: $back-colour;
 }
-
+.main-textarea{
+  /*background-color: $back-colour;*/
+          /*color: #f2b632; yellow*/
+        color: #3b3a36; /* blue */
+}
 .main-content, .side-content{
   height: calc(100% - 80px); /* doesn't work with variables in compiler. */
 }
 .main-content{
+  /*background-color: #C0DFD9;*/
+  background-color: #9AD3DE;
   display: flex;
   /*flex-flow:column nowrap;*/
   flex-direction:column;
+
+  h2 {
+    font-size: 6vh;
+    font-family: $font-head;
+    color: #22264b;
+  }
+  p{
+    /*background-color: rgba(205,218,215,1);*/
+    font-family: $font-head;
+    font-size: 1.5em;
+
+  }
+
 }
 .main-wrap{
   /*height: 50%;*/
@@ -72,134 +90,91 @@ header{
   align-self: center;
   /*text-align: left;*/
 }
+
 .btn-bar{
   align-self: flex-start;
   margin: 0 auto;
 
     #buttons{
         #prev, #next{
+          color: #3b3a36;
           margin: auto 20px;
-          font-size: 4vh;
+          font-size: 5vh;
+          text-decoration: none;
+        }
+        #prev:hover, #next:hover,
+        #prev:active, #next:active,{
+          color: #f2b632;
         }
     }
 }
 .side-content{
-  background:url('../images/001tlochers.jpg') no-repeat center right fixed;
-  background-color: #b3c2bf;
+  background-color: white;
 }
+.side-content::before{
+  width: 84%;
+  height: 100%;
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  background: no-repeat url('../images/me2.jpg')  50% / 100%;;
+  background-size: cover;
+  background-color: white;
+}
+.side-content::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background: -moz-linear-gradient(left,  rgba(154,211,222,1) 8%, rgba(154,211,222,1) 16%, rgba(255,255,255,0) 100%);
+  background: -webkit-linear-gradient(left,  rgba(154,211,222,1) 8%, rgba(154,211,222,1) 16%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(to right,  rgba(154,211,222,1) 8%, rgba(154,211,222,1) 16%,rgba(255,255,255,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9ad3de', endColorstr='#00ffffff',GradientType=1 );
+
+}
+.navigation-bar ul li:last-child{
+  border-right: none;
+}
+
 .navigation-bar{
   height: $head-nav-h;
   background-color: $back-colour;
+  overflow: hidden;
+  font-family: $font-head;
 
   ul{
     list-style: none; 
     height: $head-nav-h;
+    background-color: $head-main-colour;
     padding: 0;
     margin: 0;
+
     @extend .listObjHover;
 
+
     .active, li{
-      color: $head-font-colour;
+      height: $hundred-perc;
       font-size: 2em;
       background-color: $head-main-colour;
-      text-align: center;
+      display: table;
+      border-right:1px solid #49412c;
 
-      /* as it's an anchor tag need to ensure it micmic's parents hieght and states */
+
+      a {
+        color: #b0a18e;
+        display: table-cell; 
+        vertical-align: middle; 
+        text-align: center; 
+        text-decoration: none;
+      }
     }
 
     .active {
       font-size: 4em;
-      max-height: $hundred-perc;
     }
 
   }
-
 }
-/*p{
-  padding:10px;
-  width:600px;
-  font-size:18px;
-  margin-right:auto;
-  margin-left:auto;
-}
-p:first{
-  padding-top:20px;
-}
-h1,h2,small{
-  font-style:italic;
-}
-h1{
-  font-size:40px;
-  padding:10px;
-}
-h2{
-  font-size:30px;
-    padding:10px;
-}
-
-.navigation-bar {
-  height: 16%;
-  background-color: #3b3a36;
-}
-.navigation-bar nav {
-  height: 100%;
-}
-.navigation-bar ul{
-  height: 100%;
-  width: 100%;
-  font-size: 16px;
-  position: relative;
-}
-.navigation-bar li{
-  color: #e9ece5;
-  width: 25%;
-  display: inline-block;
-  float: left;
-  position: relative;
-  height: 100%;
-}
-.navigation-bar li:hover{
-  background-color: #e6af4b;
-}
-.navigation-bar a {
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  margin: auto 0;
-}
-.main-content {
-  width: 70%;
-  position: fixed;
-  background-color: #c9c9c9;
-  min-width: 400px;
-  height: 84%;
-  max-height: 84%;
-  right: 0;
-  bottom: 0;
-}
-.main-content div{
-  top: 20%;
-  text-align: center;
-  position: absolute;
-  margin: auto 0;
-}
-.side-content {
-  width: 30%;
-  min-width: 160px;
-  position: fixed;
-  height: 84%;
-  max-height: 84%;
-  background-color: #e3e3e3;
-  background: url("../images/001tlochers.jpg");
-  left: 0;
-  bottom: 0;
-}
-.dark-font {
-  color: #3b3a36;
-}*/
-/* b3c2bf , e9ece5, c0dfd9
- #c9c9c9 darker
-#e3e3e3 light
-#9ad3de light
-#89bdd3 blue */
