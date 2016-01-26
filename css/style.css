@@ -43,14 +43,16 @@ header {
 
 .main-content {
   /*background-color: #C0DFD9;*/
-  background-color: #9AD3DE;
+  /*background-color: #9AD3DE;*/
+  background-color: #777;
   display: flex;
   /*flex-flow:column nowrap;*/
   flex-direction: column; }
   .main-content h2 {
     font-size: 6vh;
     font-family: "Playfair Display", serif;
-    color: #22264b; }
+    color: #F5E3D1;
+    /*color: #22264b;*/ }
   .main-content p {
     /*background-color: rgba(205,218,215,1);*/
     font-family: "Playfair Display", serif;
@@ -63,7 +65,8 @@ header {
   /*text-align: left;*/ }
 
 .btn-bar {
-  align-self: flex-start;
+  position: absolute !important;
+  bottom: 0;
   margin: 0 auto; }
   .btn-bar #buttons #prev, .btn-bar #buttons #next {
     color: #3b3a36;
@@ -72,7 +75,8 @@ header {
     text-decoration: none; }
   .btn-bar #buttons #prev:hover, .btn-bar #buttons #next:hover,
   .btn-bar #buttons #prev:active, .btn-bar #buttons #next:active {
-    color: #f2b632; }
+    color: #FFF4CA;
+    font-size: 7vh; }
 
 .side-content {
   background-color: white; }
@@ -95,9 +99,9 @@ header {
   content: "";
   top: 0;
   left: 0;
-  background: -moz-linear-gradient(left, #9ad3de 8%, #9ad3de 16%, rgba(255, 255, 255, 0) 100%);
-  background: -webkit-linear-gradient(left, #9ad3de 8%, #9ad3de 16%, rgba(255, 255, 255, 0) 100%);
-  background: linear-gradient(to right, #9ad3de 8%, #9ad3de 16%, rgba(255, 255, 255, 0) 100%);
+  background: -moz-linear-gradient(left, #777777 8%, #777777 16%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(left, #777777 8%, #777777 16%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, #777777 8%, #777777 16%, rgba(255, 255, 255, 0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9ad3de', endColorstr='#00ffffff',GradientType=1 ); }
 
 .navigation-bar ul li:last-child {
@@ -128,5 +132,106 @@ header {
         text-decoration: none; }
     .navigation-bar ul .active {
       font-size: 4em; }
+
+@keyframes zoomOutLeft {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0); }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translate3d(-2000px, 0, 0);
+    transform: scale(0.1) translate3d(-2000px, 0, 0);
+    -webkit-transform-origin: left center;
+    transform-origin: left center; } }
+.zoomOutLeft {
+  -webkit-animation-name: zoomOutLeft;
+  animation-name: zoomOutLeft; }
+
+@-webkit-keyframes zoomOutRight {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0); }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translate3d(2000px, 0, 0);
+    transform: scale(0.1) translate3d(2000px, 0, 0);
+    -webkit-transform-origin: right center;
+    transform-origin: right center; } }
+@keyframes zoomOutRight {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0); }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translate3d(2000px, 0, 0);
+    transform: scale(0.1) translate3d(2000px, 0, 0);
+    -webkit-transform-origin: right center;
+    transform-origin: right center; } }
+.zoomOutRight {
+  -webkit-animation-name: zoomOutRight;
+  animation-name: zoomOutRight; }
+
+@-webkit-keyframes zoomInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1); } }
+@keyframes zoomInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1); } }
+.zoomInRight {
+  -webkit-animation-name: zoomInRight;
+  animation-name: zoomInRight; }
+
+@-webkit-keyframes zoomInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1); } }
+@keyframes zoomInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1); } }
+.zoomInLeft:active {
+  -webkit-animation-name: zoomInLeft;
+  animation-name: zoomInLeft; }
 
 /*# sourceMappingURL=style.css.map */
