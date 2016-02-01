@@ -97,20 +97,30 @@ header{
 
 .btn-bar{
   position: absolute !important;
-  bottom: 0;
-  margin: 0 auto;
+  bottom: 20px;
+  margin-left: 10%;
+  padding-left: 0 !important;
 
     #buttons{
         #prev, #next{
           color: #3b3a36;
-          margin: auto 20px;
           font-size: 5vh;
           text-decoration: none;
+          border: 4px solid #3b3a36;
+          height: 50px;
+          width: 50px;
+          padding: 10px 24px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        #prev{
+          margin-right: 40px;
         }
         #prev:hover, #next:hover,
         #prev:active, #next:active,{
           color: #FFF4CA;
-          font-size: 7vh;
+          border: 4px solid #FFF4CA;
+
         }
     }
 }
@@ -176,10 +186,16 @@ header{
         text-align: center; 
         text-decoration: none;
       }
+
     }
 
     .active {
       font-size: 4em;
+
+      a {
+        text-align: left;
+        padding-left: 12%;
+      }
     }
 
   }

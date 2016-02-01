@@ -8,20 +8,24 @@
 window.onload = init;
 function init(){
 
-  document.getElementById('next').addEventListener('click', addMovementStates);
+  document.getElementById('next').addEventListener('click', findNextDiv);
+  document.getElementById('prev').addEventListener('click', findPrevDiv);
 
   // document.getElementById("next").onclick = addMovementStates();
 }
 
 
-function addMovementStates() {
+function findPrevDiv() {
   var children = document.getElementById('main-textarea').childNodes;
 
-  _.each(children, function(singleNode) {
-    if(singleNode.nodeName === 'DIV') {
-      console.log(singleNode);
-    }
-  });
+
+  var test = _.pluck(children, 'div.text-obj');
+  console.log(test);
+  // _.each(children, function(singleNode) {
+  //   if(singleNode.nodeName === 'DIV') {
+  //     console.log(singleNode);
+  //   }
+  // });
   console.log(children)
   // var el = document.getElementById('div-01').nextSibling,
   // findNextDiv();
@@ -32,13 +36,35 @@ function addMovementStates() {
   // var newClass = classString.concat(" animated zoomInLeft"); // Adds the class "main__section" to the string (notice the leading space)
   // select.className = newClass; // sets className to the new string
 }
+var testingArray  = [];
 
 function findNextDiv(){
   // var select = document.getElementById("test");
-  var selected =  document.getElementsByClassName("selected");
-  console.log(selected.nextSibling)
-  var classString = selected.className;
-  selected.className = newClass;
+    var children = document.getElementById('main-textarea').childNodes;
+    var selected = document.getElementsByClassName('selected');
+    console.log(selected);
+  
+    var nextObj = selected[0].nextElementSibling;
+
+    console.log(nextObj);
+
+    // unable to use the proto unless dom is added to array
+    // for (i = 0; i < children.length; i++) { 
+    //    console.log('dividing the children', children[i]);
+    // }
+
+//     _.each(children, function(singleNode) {
+//     if(singleNode.nodeName === 'DIV') {
+//         console.log(singleNode);
+
+//         testingArray.push(singleNode);
+//       }
+//     });
+// console.log(testingArray);
+  // var selected =  document.getElementsByClassName("selected");
+  // console.log(selected.nextSibling)
+  // var classString = selected.className;
+  // selected.className = newClass;
 
 }
 function exitAnimation(){
