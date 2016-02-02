@@ -36,6 +36,10 @@ header {
   /*color: #f2b632; yellow*/
   color: #3b3a36;
   /* blue */ }
+  #main-textarea .text-obj {
+    display: none; }
+  #main-textarea .selected {
+    display: block; }
 
 .main-content, .side-content {
   height: calc(100% - 80px);
@@ -62,7 +66,7 @@ header {
   /*height: 50%;*/
   margin: auto;
   width: 80%;
-  cursor: pointer;
+  cursor: default;
   align-self: center;
   /*text-align: left;*/ }
 
@@ -321,12 +325,20 @@ header {
   -webkit-animation-name: slideInLeft;
   animation-name: slideInLeft; }
 
-#main-textarea:hover .selected {
+#main-textarea .selected .next {
   animation-name: slideInRight;
   animation-duration: 1s; }
 
-#main-textarea:active .selected {
-  animation-name: fadeOutRight;
+#main-textarea .prevEnter {
+  animation-name: slideInRight;
   animation-duration: 1s; }
+
+#main-textarea .nextleaving {
+  animation-name: fadeOutRight;
+  animation-duration: 0.5s; }
+
+#main-textarea .prevleaving {
+  animation-name: fadeOutLeft;
+  animation-duration: 0.5s; }
 
 /*# sourceMappingURL=style.css.map */
